@@ -1,0 +1,112 @@
+@import '../../../scss/_variables.scss';
+@import '../../../scss/mixins';
+
+.container-detail-quote {
+    margin: 32px auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+
+    .image-quote {
+        margin-bottom: 24px ;
+
+        @include mobile {
+            margin-left: 23px;
+            margin-right: 23px;
+        }
+    }
+
+    .header-quote {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        .container-icons {
+            width: 108px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .link-share {
+                height: 25px;
+            }
+
+            @include mobile {
+                position: absolute;
+                top: -52px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                height: 36px;
+                background: $white;
+                box-shadow: 0px 2px 7px rgb(0 0 0 / 8%);
+                border-radius: 4px;
+                padding: 3px 18px;
+            }
+
+        }
+
+        .date {
+            font-family: Mulish;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: $dark-gray;
+        }
+    }
+
+    .container-detail-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px;
+        background: $white;
+        box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+        position: relative;
+
+        @include mobile {
+            margin: 0px 23px 0px;
+        }
+
+        .title {
+            font-family: Mulish;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 30px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: $hyper-dark-blue;
+            margin-bottom: 16px;
+        }
+
+        .description {
+            font-family: Mulish;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+
+        .author {
+            font-family: Mulish;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 22px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: $hyper-dark-blue;
+            margin-top: 16px;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.header {
+    width: 100%;
+    background-color: $hyper-dark-blue;
+
+    .container {
+        margin: 0 auto;
+        max-width: 1000px;
+        height: 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mobile {
+            margin: 0px 23px;
+        }
+    
+        .title {
+            color: $white;
+            font-family: Mulish;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 45px;
+            letter-spacing: 0em;
+            text-align: left;
+            text-decoration: none;
+
+            &:hover {
+                color: $ligth-gray;
+            }
+        }
+    
+        .container-items {
+            display: flex;
+            align-items: center;
+    
+            .item {
+                font-family: Mulish;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: center;
+                margin-right: 16px;
+                color: $white;
+                text-decoration: none;
+
+                &:hover {
+                    color: $ligth-gray;
+                }
+             }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.picture-card {
+    background-size: cover;
+    width: 480px;
+    height: 190px;
+    position: relative;
+    margin-bottom: 40px;
+
+    @include mobile { 
+        width: 342px;
+        height: 342px;
+    }
+
+    @include minMobile { 
+        width: 300px;
+        height: 300px;
+    }   
+
+
+    .date {
+        background: $white;
+        border-radius: 50px;
+        padding: 4px 4px 4px 10px;
+        position: absolute;
+        top: 178px;
+        right: 20px;
+        box-shadow: 0px 2px 7px 0px #00000014;
+        font-family: Mulish;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 11px;
+        letter-spacing: 0.1em;
+        text-align: right;
+        color: $hyper-dark-blue;
+        display: flex;
+        align-items: center;
+
+        @include mobile {
+            top: 328px;
+        }
+
+        @include minMobile { 
+            top: 288px;
+        }   
+
+        .text {
+            margin-right: 8px;
+        }
+
+        .arrow-date {
+            width: 21px;
+            height: 21px;
+            background-color: $hyper-dark-blue;
+            border-radius: 50px;
+        }
+    }
+}
