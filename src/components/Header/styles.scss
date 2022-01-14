@@ -4,6 +4,13 @@
 .header {
     width: 100%;
     background-color: $hyper-dark-blue;
+    position: relative;
+
+    @include mobile {
+        position: sticky;
+        z-index: 4;
+        top: 0px;
+    }
 
     .container {
         margin: 0 auto;
@@ -36,6 +43,35 @@
         .container-items {
             display: flex;
             align-items: center;
+
+            @include mobile {
+                flex-direction: column;
+                align-items: flex-start;
+                position: absolute;
+                background: $hyper-dark-blue;
+                top: 55px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                height: 100vh;
+                z-index: 3;
+                padding-left: 30px;
+                padding-top: 20px;
+                background-image: url("https://lm-challenges.s3.amazonaws.com/resources/img-menu-background.png");
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0px;
+                    right: 0;
+                    bottom: 0;
+                    height: 100vh;
+                    width: 100vh;
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(2, 0, 9, 0.240642) 5%, #0A0025 78.65%);
+                    transform: rotate(90deg);
+                    z-index: -1;
+                }
+            }
     
             .item {
                 font-family: Mulish;
@@ -51,6 +87,11 @@
 
                 &:hover {
                     color: $ligth-gray;
+                }
+
+                @include mobile {
+                    margin-right: 0px;
+                    margin-bottom: 8px;
                 }
              }
         }

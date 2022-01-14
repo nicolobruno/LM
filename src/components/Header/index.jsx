@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
 import { ITEMS_HEADER } from './constants';
@@ -8,13 +8,19 @@ import './styles.scss';
 
 const Header = () => {
     const isMobile = useMobileDevice();
+    const [menuOpen, setMenuOpen] = useState(false);
+    const handleClickToogle = () => {
+        setMenuOpen((prevState) => !prevState);
+    }
+
     return (
         <div className="header">
             <div className="container">
                 <Link className="title" to="/quotes">Likemind</Link>
-                {isMobile ? (
-                    <img src={menu} alt="menu" />
-                ) : (
+                {isMobile && (
+                    <img src={menu} alt="menu" onClick={handleClickToogle} />
+                )}
+                {(!isMobile || menuOpen) && (
                     <div className="container-items">
                         {ITEMS_HEADER && ITEMS_HEADER.map(elem => 
                             <Link key={elem.name} className="item" to={elem.route}>{elem.name}</Link>
