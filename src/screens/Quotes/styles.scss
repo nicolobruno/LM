@@ -4,6 +4,7 @@
 .container-home {
     margin: 32px auto;
     max-width: 1000px;
+    min-height: 500px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,6 +12,10 @@
     justify-content: space-between;
 
     @include mobile {
+        justify-content: center;
+    }
+
+    @include tablet {
         justify-content: center;
     }
 
@@ -22,7 +27,6 @@
         line-height: 22px;
         letter-spacing: 0em;
         text-align: center;
-        height: 46px;
         width: 136px;
         border: 2px solid $hyper-dark-blue;
         box-sizing: border-box;

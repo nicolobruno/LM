@@ -1,5 +1,6 @@
 @import '../../../scss/variables';
 @import '../../../scss/mixins';
+@include shimmer_keyframes();
 
 .picture-card {
     background-size: cover;
@@ -8,9 +9,16 @@
     position: relative;
     margin-bottom: 40px;
 
+    &.loading {
+        @include shimmer();
+        background-color: transparent;
+        color: transparent;
+      }
+
     @include mobile { 
         width: 342px;
         height: 342px;
+        margin-right: 4px;
     }
 
     @include minMobile { 
@@ -18,6 +26,9 @@
         height: 300px;
     }   
 
+    @include tablet {
+        margin-right: 4px;
+    }
 
     .date {
         background: $white;

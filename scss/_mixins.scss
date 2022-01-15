@@ -1,8 +1,9 @@
 $mobile: 768px !default;
 $mobile-min: 400px !default;
+$desktop: 1024px !default;
 
 @mixin mobile {
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $mobile - 1) {
     @content;
   }
 }
@@ -11,4 +12,38 @@ $mobile-min: 400px !default;
   @media screen and (max-width: $mobile-min) {
     @content;
   }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $mobile ) and (max-width: $desktop - 1) {
+    @content;
+  }
+}
+
+@mixin shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #eff1f3 4%, #e8e8e8 25%, #eff1f3 36%);
+  background-size: 1000px 100%;
+}
+
+@mixin shimmer_keyframes {
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+}
+
+@mixin shimmer80 {
+  cursor: default;
+  background-color: #fafafa;
+  @include shimmer();
+  width: 80%;
+  height: 32px;
+  color: transparent;
+  user-select: none;
+  margin-top: 5px;
 }
