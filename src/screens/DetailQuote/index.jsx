@@ -28,7 +28,7 @@ const DetailQuote = () => {
         <div className="container-detail-quote">
             {quote && (
                 <Fragment>
-                    <img className={`image-quote ${!loaded ? 'loading' : ''}`} src={loaded} alt="quote" />
+                    <img loading="lazy" className={`image-quote ${!loaded ? 'loading' : ''}`} src={isMobile ? quote.mobileImage.publicURL : quote.desktopImage.publicURL} alt="quote" />
                     <div className="container-detail-body">
                         <div className="header-quote">
                             <span className="date">{dayjs(quote.activeTs).format('dddd, MMMM D, YYYY')}</span>
