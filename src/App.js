@@ -17,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
+          <Route path="/" element={<Quotes />} />
           <Route path="/quotes" element={<Quotes />} />
           <Route path="/quote/:id" element={<DetailQuote />} />
         </Routes>

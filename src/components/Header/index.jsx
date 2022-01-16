@@ -23,7 +23,7 @@ const Header = () => {
                 {(!isMobile || menuOpen) && (
                     <div className="container-items">
                         {ITEMS_HEADER && ITEMS_HEADER.map(elem => 
-                            <Link key={elem.name} className="item" to={elem.route}>{elem.name}</Link>
+                            <Link key={elem.name} onClick={handleClickToogle} className="item" to={elem.route}>{elem.name}</Link>
                         )}
                     </div>
                 )}

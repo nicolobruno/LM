@@ -1,18 +1,18 @@
 export const ITEMS_HEADER = [
     {
         name: 'Home',
-        route: '/quotes'
+        route: '/'
     },
     {
         name: 'Quotes',
-        route: '/quotes'
+        route: '/'
     },
     {
         name: 'Articles',
-        route: '/quotes'
+        route: '/'
     },
     {
         name: 'Games',
-        route: '/quotes'
+        route: '/'
     }
 ]

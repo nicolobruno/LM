@@ -11,6 +11,10 @@
     width: 100%;
     justify-content: space-between;
 
+    @include tablet {
+        max-width: 750px;
+    }
+
     .image-quote {
         margin-bottom: 24px ;
 

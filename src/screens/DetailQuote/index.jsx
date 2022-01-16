@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
 import { useMobileDevice } from '../../hooks/useDeviceMobile';
 import { BASE_URL } from '../../api';
 import { useLoadImage} from '../../hooks/useLoadImage';
+import ShareButtons from './components/ShareButtons';
 import './styles.scss';
 
 const DetailQuote = () => {
@@ -31,30 +32,7 @@ const DetailQuote = () => {
                     <div className="container-detail-body">
                         <div className="header-quote">
                             <span className="date">{dayjs(quote.activeTs).format('dddd, MMMM D, YYYY')}</span>
-                            <div className="container-icons">
-                                <a
-                                    target="_blank"
-                                    className="link-share"
-                                    rel="noopener noreferrer"
-                                    href={`https://www.facebook.com/sharer/sharer.php?u=${urlShared}`}>
-                                    <img src="https://lm-challenges.s3.amazonaws.com/resources/fb-icon.svg" alt="facebook" />
-                                </a>
-                                <a
-                                    target="_blank"
-                                    className="link-share"
-                                    rel="noopener noreferrer"
-                                    href={`https://twitter.com/share?url=${urlShared}`}>
-                                    <img src="https://lm-challenges.s3.amazonaws.com/resources/tw-icon.svg" alt="tw" />
-                                </a>
-                                <a
-                                    target="_blank"
-                                    className="link-share"
-                                    rel="noopener noreferrer"
-                                    href={`https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&body= Take a look at this quote ${urlShared}&ui=2&tf=1&pli=1`}>
-                                    <img src="https://lm-challenges.s3.amazonaws.com/resources/email-icon.svg" alt="email" />
-                                </a>
-
-                            </div>
+                            <ShareButtons urlShared={urlShared} />
                         </div>  
                         <h2 className="title">{quote.title}</h2>
                         <img src="https://lm-challenges.s3.amazonaws.com/resources/quote-icon.svg" alt="separator" />
@@ -62,8 +40,8 @@ const DetailQuote = () => {
                         <p className="description">{quote.description}</p>
                     </div>
                 </Fragment>
-        )}
-    </div>
+            )}
+        </div>
     )
 }
 
