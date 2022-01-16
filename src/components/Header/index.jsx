@@ -10,13 +10,15 @@ const Header = () => {
     const isMobile = useMobileDevice();
     const [menuOpen, setMenuOpen] = useState(false);
     const handleClickToogle = () => {
-        setMenuOpen((prevState) => !prevState);
+        if (isMobile) {
+            setMenuOpen((prevState) => !prevState);
+        }
     }
 
     return (
         <div className="header">
             <div className="container">
-                <Link className="title" to="/quotes">Likemind</Link>
+                <Link className="title" onClick={handleClickToogle} to="/quotes">Likemind</Link>
                 {isMobile && (
                     <img src={menu} alt="menu" onClick={handleClickToogle} />
                 )}
